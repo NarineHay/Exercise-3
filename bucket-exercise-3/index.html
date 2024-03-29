@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>My First Webpage</title>
+    </head>
+    <body>
+        <h1>I love coffee</h1>
+        <p>Hello world!</p>
+    </body>
+
+    <img src="https://exercise-s3-remote-bucket-3.s3.us-east-2.amazonaws.com/bucket-exercise-3/coffee.jpg" width=500/>
+
+    <!-- CORS demo -->
+    <div id="tofetch"></div>
+    <script>
+        var tofetch = document.getElementById("tofetch");
+
+        fetch('https://exercise-s3-remote-bucket-3.s3.us-east-2.amazonaws.com/bucket-exercise-3/extra-page.html')
+        .then((response) => { 
+            return response.text();
+        })
+        .then((html) => {
+            tofetch.innerHTML = html     
+        });
+    </script>
+</html>
+
